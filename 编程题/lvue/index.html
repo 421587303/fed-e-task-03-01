@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-vue</title>
+</head>
+<body>
+<div id="app">
+  <div>{{ msg }}</div>
+  <div>{{ count }}</div>
+  <div v-text="msg"></div>
+  <input type="text" v-model="msg">
+  <input type="text" v-model="count">
+  <h2 v-on:click="fnA">click</h2>
+  <h1 v-html='html'></h1>
+</div>
+<script src="./src/dep.js"></script>
+<script src="./src/watcher.js"></script>
+<script src="./src/compiler.js"></script>
+<script src="./src/observer.js"></script>
+<script src="./src/vue.js"></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: 'Hello Vue',
+      count: 100,
+      la: 'la',
+      html: '<a href="https://www.baidu.com">百度</a>'
+    },
+    methods: {
+      fnA() {
+        console.log(this.la)
+      },
+    }
+  })
+</script>
+</body>
+</html>
